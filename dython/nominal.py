@@ -778,7 +778,8 @@ def associations(dataset,
                             square=True,
                             ax=ax,
                             mask=inf_nan_mask,
-                            cbar=False)
+                            cbar=False,
+                            order=order)
         else:
             inf_nan_mask = np.ones_like(corr)
         if len(single_value_columns) > 0:
@@ -798,7 +799,7 @@ def associations(dataset,
                             square=True,
                             ax=ax,
                             mask=sv_mask,
-                            cbar=False)
+                            cbar=False, order=order)
         else:
             sv_mask = np.ones_like(corr)
         mask = np.vectorize(lambda x: not bool(x))(inf_nan_mask) + np.vectorize(lambda x: not bool(x))(sv_mask)
@@ -813,7 +814,8 @@ def associations(dataset,
                         square=True,
                         mask=mask,
                         ax=ax,
-                        cbar=cbar)
+                        cbar=cbar,
+                        order=order)
         plt.title(title)
         if filename:
             plt.savefig(filename)
