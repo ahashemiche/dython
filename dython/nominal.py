@@ -798,7 +798,8 @@ def associations(dataset,
                             square=True,
                             ax=ax,
                             mask=sv_mask,
-                            cbar=False)
+                            cbar=False,
+                            order=order)
         else:
             sv_mask = np.ones_like(corr)
         mask = np.vectorize(lambda x: not bool(x))(inf_nan_mask) + np.vectorize(lambda x: not bool(x))(sv_mask)
