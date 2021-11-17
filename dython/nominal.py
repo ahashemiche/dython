@@ -536,7 +536,8 @@ def associations(dataset,
                  compute_only=False,
                  clustering=False,
                  title=None,
-                 filename=None
+                 filename=None,
+                 order=None
                  ):
     """
     Calculate the correlation/strength-of-association of features in data-set
